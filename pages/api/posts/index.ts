@@ -48,11 +48,6 @@ const createPost = async (req: any, res: any) => {
 
 const getPosts = async (req: any, res: any) => {
     try{
-        const user = await auth(req, res);
-        if(!user){
-            return res.status(400).json({err: "Unauthorized"}); 
-        }
-
         const posts = await Posts.find().sort({createdAt: -1});
 
         res.json(posts);

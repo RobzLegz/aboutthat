@@ -2,10 +2,12 @@ import axios from "axios";
 import uploadImage from "./uploadImage";
 import {PostInterface} from "../interfaces/postInterface";
 import { likePostRdx, publishPost, setPosts } from "../redux/slices/postSlice";
+import { Dispatch } from "redux";
 
 const createPost = async (
     e: any, 
     text: string, 
+    title: string, 
     file: any, 
     token: string,
     dispatch: any, 
@@ -28,8 +30,8 @@ const createPost = async (
         return;
     }
 
-    if(text.length > 100){
-        setError("Text can't be that long");
+    if(!text || !title){
+        setError("Cant create an empty post");
         setLoading(false);
         return;
     }
@@ -52,6 +54,7 @@ const createPost = async (
 
     const data = {
         text: text,
+        title: title,
         media: media
     };
 
@@ -70,14 +73,8 @@ const createPost = async (
         });
 }
 
-const getPosts = (dispatch: any, token: string) => {
-    const headers = {
-        headers: {
-            Authorization: token
-        }
-    }
-
-    axios.get("/api/posts", headers)
+const getPosts = (dispatch: Dispatch) => {
+    axios.get("/api/posts")
         .then((res) => {
             dispatch(setPosts(res.data));
         })

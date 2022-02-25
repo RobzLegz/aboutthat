@@ -1,29 +1,21 @@
 import Head from "next/head"
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Navigation from "../src/components/Navigation";
 import HomeContainer from "../src/components/HomeContainer";
-import { selectUser, UserInfo } from "../src/redux/slices/userSlice";
-import { checkForLogin } from "../src/requests/userRequests";
+import { useEffect } from "react";
+import { postInfo, selectPosts } from "../src/redux/slices/postSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getPosts } from "../src/requests/postRequests";
 
 export default function Home() {
-  const userInfo: UserInfo = useSelector(selectUser);
+  const postInfo: postInfo = useSelector(selectPosts);
 
   const dispatch = useDispatch();
-  const router = useRouter();
 
   useEffect(() => {
-    if(!userInfo.loggedIn || !userInfo.token){
-      const token = window.localStorage.getItem("refreshtoken");
-
-      if(token){
-        checkForLogin(dispatch, router);
-      }else{
-        router.push("/auth/login");
-      }
+    if(!postInfo.posts){
+      getPosts(dispatch);
     }
-}, [userInfo.loggedIn, dispatch, userInfo.token, router]);
+  }, [postInfo.posts]);
 
   return (
     <div className="page">

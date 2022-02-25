@@ -1,5 +1,4 @@
 import connectDB from "../../../src/utils/connectDB";
-import valid from "../../../src/utils/valid";
 import bcrypt from "bcrypt";
 import Users from "../../../src/models/userModel";
 

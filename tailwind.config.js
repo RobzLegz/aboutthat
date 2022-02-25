@@ -15,16 +15,10 @@ module.exports = {
           darker: "#9D9296"
         },
         dark: {
-          DEFAULT: "#554F51"
+          DEFAULT: "#141C25"
         },
-        rtkBlue: {
-          DEFAULT: "#5C61CE",
-          darker: "#4D52D6"
-        },
-        rtkRed: {
-          DEFAULT: "#BE1953",
-          darker: "#771F49",
-          lighter: "#EB3355"
+        aboutThat_red: {
+          DEFAULT: "#9E363E",
         },
         tpBg: {
           DEFAULT: "rgba(0, 0, 0, 0.4)"

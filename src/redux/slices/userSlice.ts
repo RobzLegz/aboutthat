@@ -4,7 +4,6 @@ import { UserInterface } from "../../interfaces/userInterface";
 export interface UserInfo{
     loggedIn: boolean,
     token: string,
-    loading: boolean,
     info: UserInterface | null,
 }
 
@@ -12,7 +11,6 @@ const initialState: UserInfo = {
     loggedIn: false,
     token: "",
     info: null,
-    loading: true,
 }
 
 export const userSlice = createSlice({
