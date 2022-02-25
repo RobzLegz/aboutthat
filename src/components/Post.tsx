@@ -13,7 +13,7 @@ const Post: React.FC<Props> = ({data}) => {
 
     return (
         <div 
-            className="w-full bg-dark-lighter p-4 flex items-center justify-between cursor-pointer"
+            className="w-full bg-dark-lighter p-4 flex items-center justify-between cursor-pointer my-2 rounded-md"
             onClick={() => router.push(`/p/${data._id}`)}
         >
             <h4 className="text-aboutThat_red">{data.title}</h4>

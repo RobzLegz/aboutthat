@@ -64,7 +64,7 @@ function PP() {
 
                     <p className="text-white">{activePost.text}</p>
 
-                    <div className="flex w-full items-center justify-end">
+                    <div className="flex w-full items-center justify-end mt-2">
                         <p className="text-white">{activePost.updatedAt}</p>
                     </div>
                 </div>

@@ -46,7 +46,7 @@ function HomeContainer() {
                 type="text" 
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full rounded-t-md p-2"
+                className="w-full rounded-t-md p-2 mb-4"
                 placeholder="Add title"
               />
 
