@@ -73,6 +73,17 @@ function PP() {
 
                     <p className="text-white">{activePost.text}</p>
 
+                    {
+                        activePost.media && (
+                            <img 
+                                src={activePost.media}
+                                alt={`image related to ${activePost.title} on about that blog (https://aboutthat.vercel.app/)`} 
+                                className="mt-2 w-full"
+                            />
+                        )
+                    }
+                    
+
                     <div className="flex w-full items-center justify-end mt-2">
                         <small className="text-white">{`<i>${activePost.updatedAt}</i>`}</small>
                     </div>
