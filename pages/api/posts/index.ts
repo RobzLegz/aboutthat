@@ -17,9 +17,9 @@ export default async (req: any, res: any) => {
 
 const createPost = async (req: any, res: any) => {
     try{
-        const { text, media } = req.body;
+        const { text, title, media } = req.body;
 
-        if(!text && !media){
+        if(!text || !title){
             return res.status(400).json({err: "Can't submit an empty post"}); 
         }
 
@@ -28,10 +28,14 @@ const createPost = async (req: any, res: any) => {
             return res.status(400).json({err: "Unauthorized"}); 
         }
 
+        if(user.role !== "admin"){
+            return res.status(400).json({err: "Unauthorized"}); 
+        }
+
         const newPost = new Posts({
             text: text,
             media: media,
-            user: user._id
+            title: title
         });
 
         await newPost.save();

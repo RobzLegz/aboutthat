@@ -6,8 +6,6 @@ export interface UserInfo{
     token: string,
     loading: boolean,
     info: UserInterface | null,
-    users: UserInterface[] | null;
-    activeProfile: UserInterface | null;
 }
 
 const initialState: UserInfo = {
@@ -15,8 +13,6 @@ const initialState: UserInfo = {
     token: "",
     info: null,
     loading: true,
-    users: null,
-    activeProfile: null
 }
 
 export const userSlice = createSlice({
@@ -37,23 +33,6 @@ export const userSlice = createSlice({
             state.token = "";
             state.loggedIn = false;
         },
-        setUsers: (state, action) => {
-            state.users = action.payload;
-        },
-        setActiveProfile: (state, action) => {
-            state.activeProfile = action.payload;
-        },
-        updateUser: (state, action) => {
-            if(state.info){
-                const {name, username, course, email, avatar} = action.payload;
-
-                state.info.name = name;
-                state.info.username = username;
-                state.info.course = course;
-                state.info.email = email;
-                state.info.avatar = avatar;
-            }
-        },
     },
 });
 
@@ -62,9 +41,6 @@ export const {
     setUserInfo,
     setToken,
     logout,
-    setUsers,
-    setActiveProfile,
-    updateUser
 } = userSlice.actions;
 
 export const selectUser = (state: any) => state.user;

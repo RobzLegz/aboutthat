@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "aboutthat",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,9 +8,7 @@
     "lint": "next lint"
   },
   "keywords": [
-    "next",
-    "template",
-    "frontend"
+    "aboutthat"
   ],
   "author": {
     "name": "RobzLegz",

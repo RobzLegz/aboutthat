@@ -1,21 +1,17 @@
 import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema({
-    user: {
+    title: {
         type: String,
         required: true
     },
     text: {
         type: String,
-        default: ""
+        required: true
     },
     media: {
         type: String,
         default: ""
-    },
-    likes: {
-        type: Array,
-        default: []
     },
 }, {
     timestamps: true

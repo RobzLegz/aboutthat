@@ -6,9 +6,6 @@ connectDB();
 
 export default async (req: any, res: any) => {
     switch(req.method){
-        case "GET":
-            await getAllUsers(req, res);
-            break;
         case "PUT":
             await updateUserInfo(req, res);
             break;
@@ -18,27 +15,14 @@ export default async (req: any, res: any) => {
     }
 }
 
-const getAllUsers = async (req: any, res: any) => {
-    try{
-        const users = await Users.find();
-
-        res.json(users);
-    }catch(err: any){
-        return res.status(500).json({err: err.message});
-    }
-}
-
 const updateUserInfo = async (req: any, res: any) => {
     try{
-        const {name, username, email, course, avatar} = req.body;
+        const {username, avatar} = req.body;
 
         const user = await auth(req, res);
 
         await user.updateOne({
-            name: name,
             username: username,
-            email: email,
-            course: course,
             avatar: avatar
         });
 
@@ -47,7 +31,6 @@ const updateUserInfo = async (req: any, res: any) => {
         return res.status(500).json({err: err.message});
     }
 }
-
 
 const deleteProfile = async (req: any, res: any) => {
     try{
