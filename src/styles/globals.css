@@ -6,7 +6,7 @@
 
 @layer components{
     h1{
-        @apply text-4xl text-white font-title font-bold;
+        @apply text-2xl sm:text-4xl text-white font-title font-bold;
     }
 
     h2{
@@ -36,6 +36,10 @@
 
     button{
         @apply bg-dark-lighter outline-dark text-white;
+    }
+
+    small{
+        @apply text-xs;
     }
 
     .page{

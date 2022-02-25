@@ -22,7 +22,7 @@ function Navigation() {
   }, [userInfo.loggedIn, userInfo.token]);
 
   return (
-    <div className="bg-aboutThat_red w-full h-16 fixed top-0 left-0 flex items-center justify-between px-10">
+    <div className="bg-aboutThat_red w-full h-16 fixed top-0 left-0 flex items-center justify-between px-4 sm:px-10">
       <Link href="/">
         <h1 className="cursor-pointer">About that</h1>
       </Link>

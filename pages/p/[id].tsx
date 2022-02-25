@@ -56,8 +56,17 @@ function PP() {
 
             <Navigation />
 
-            <div className="w-full h-full flex items-start justify-center pt-20">
-                <div className="w-[600px] bg-dark-lighter p-4 rounded-md">
+            <div className="w-full h-full flex flex-col items-center justify-start pt-20 px-4">
+                <div className="w-full p-2 bg-aboutThat_red sm:hidden">
+                    <img 
+                        src="/svg/back.svg" 
+                        alt="backspace" 
+                        className="w-8"
+                        onClick={() => router.back()}
+                    />
+                </div>
+
+                <div className="w-full max-w-[600px] bg-dark-lighter p-4 rounded-md">
                     <div className="mb-4">
                         <h3 className="text-aboutThat_red">{activePost.title}</h3>
                     </div>
@@ -65,7 +74,7 @@ function PP() {
                     <p className="text-white">{activePost.text}</p>
 
                     <div className="flex w-full items-center justify-end mt-2">
-                        <p className="text-white">{activePost.updatedAt}</p>
+                        <small className="text-white">{`<i>${activePost.updatedAt}</i>`}</small>
                     </div>
                 </div>
             </div>

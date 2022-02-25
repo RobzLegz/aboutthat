@@ -37,8 +37,8 @@ function HomeContainer() {
   }
 
   return (
-    <div className="w-full h-full flex justify-start items-center flex-col pt-20">
-      <div className="w-[600px]">
+    <div className="w-full h-full flex justify-start items-center flex-col pt-20 px-4">
+      <div className="w-full max-w-[600px]">
         {
           userInfo.info && userInfo.info.role === "admin" && (
             <form className="bg-dark-lighter w-full mb-8 rounded-md">
