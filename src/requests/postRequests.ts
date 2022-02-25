@@ -1,7 +1,7 @@
 import axios from "axios";
 import uploadImage from "./uploadImage";
 import {PostInterface} from "../interfaces/postInterface";
-import { likePostRdx, publishPost, setPosts } from "../redux/slices/postSlice";
+import { publishPost, setPosts } from "../redux/slices/postSlice";
 import { Dispatch } from "redux";
 
 const createPost = async (
@@ -82,26 +82,7 @@ const getPosts = (dispatch: Dispatch) => {
         })
 }
 
-const likePost = async (id: string, userId: string | undefined, dispatch: any, token: string, liked: boolean, setLiked: React.Dispatch<React.SetStateAction<boolean>>) => {
-    if(!userId){
-        return;
-    }
-
-    const headers = {
-        headers: {
-            Authorization: token
-        }
-    }
-
-    await axios.put(`/api/posts/like/${id}`, {}, headers)
-        .then((res) => {
-            dispatch(likePostRdx({userId: userId, postId: id}));
-            setLiked(!liked);
-        })
-}
-
 export {
     createPost,
     getPosts,
-    likePost
 };
