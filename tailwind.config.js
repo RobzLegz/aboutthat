@@ -15,7 +15,8 @@ module.exports = {
           darker: "#9D9296"
         },
         dark: {
-          DEFAULT: "#141C25"
+          DEFAULT: "#141C25",
+          lighter: "#1C2126"
         },
         aboutThat_red: {
           DEFAULT: "#9E363E",

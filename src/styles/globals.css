@@ -31,11 +31,11 @@
 
     input,
     textarea{
-        @apply border-[1px] rounded-md bg-dark outline-dark text-white px-2;
+        @apply border-[1px] rounded-md bg-dark-lighter outline-dark text-white px-2;
     }
 
     button{
-        @apply bg-dark outline-dark text-white;
+        @apply bg-dark-lighter outline-dark text-white;
     }
 
     .page{

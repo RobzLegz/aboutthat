@@ -23,7 +23,9 @@ function Navigation() {
 
   return (
     <div className="bg-aboutThat_red w-full h-16 fixed top-0 left-0 flex items-center justify-between px-10">
-      <h1>About that</h1>
+      <Link href="/">
+        <h1>About that</h1>
+      </Link>
 
       {
         showSign && (

@@ -82,7 +82,7 @@ const loginUser = (
         .then((res: any) => {
             window.localStorage.setItem("firstLogin", "true");
             window.localStorage.setItem("refreshtoken", res.data.refresh_token)
-            checkForLogin(dispatch, router);
+            checkForLogin(dispatch);
             setLoading(false);
         }).catch((err: any) => {
             const message: string = err.response.data.err;
@@ -91,12 +91,9 @@ const loginUser = (
         });
 }
 
-const checkForLogin = (dispatch: any, router: any) => {
-    const first_login = window.localStorage.getItem("firstLogin");
+const checkForLogin = (dispatch: any) => {
     const rf_token = window.localStorage.getItem("refreshtoken");
-
-    if(!rf_token || !first_login){
-        router.push("/auth/login");
+    if(!rf_token){
         return;
     }
 
@@ -112,10 +109,8 @@ const checkForLogin = (dispatch: any, router: any) => {
             dispatch(setUserInfo(res.data.user));
             dispatch(login());
         }).catch((err) => {
-            const message: string = err.response.data.err;
             window.localStorage.removeItem("firstLogin");
             window.localStorage.removeItem("refreshtoken");
-            router.push("/auth/login");
         });
 }
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postInfo, selectPosts } from "../redux/slices/postSlice";
 import { selectUser, UserInfo } from "../redux/slices/userSlice";
 import { createPost } from "../requests/postRequests";
+import Post from "./Post";
 
 function HomeContainer() {
   const postInfo: postInfo = useSelector(selectPosts);
@@ -10,12 +11,8 @@ function HomeContainer() {
 
   const dispatch = useDispatch();
 
-  if(!postInfo.posts && !userInfo.info){
-    return null;
-  }
-
-  const [text, setText] = useState("");
   const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [media, setMedia] = useState("");
@@ -27,11 +24,11 @@ function HomeContainer() {
       const file = e.target.files[0];
 
       if(file.size > 1024 * 1024){
-          return setError("File size too large!")
+        return setError("File size too large!")
       }
 
       if(file.type !== "image/jpeg" && file.type !== "image/png"){
-          return setError("Incorrect file format!")
+        return setError("Incorrect file format!")
       }
 
       setMedia(URL.createObjectURL(e.target.files[0]))
@@ -44,7 +41,7 @@ function HomeContainer() {
       <div className="w-[600px]">
         {
           userInfo.info && userInfo.info.role === "admin" && (
-            <form className="bg-white w-full mb-4 rounded-md">
+            <form className="bg-dark-lighter w-full mb-8 rounded-md">
               <input 
                 type="text" 
                 value={title}
@@ -66,7 +63,7 @@ function HomeContainer() {
 
               {
                 error && (
-                  <div className="w-full p-2 bg-red-700 flex items-center justify-center">
+                  <div className="w-full p-2 bg-aboutThat_red flex items-center justify-center">
                     <p className="text-white">{error}</p>
                   </div>
                 )
@@ -112,6 +109,19 @@ function HomeContainer() {
           </form>
           )
         }
+
+        <div className="w-full">
+          {
+            postInfo.posts && postInfo.posts.map((p, i) => {
+              return (
+                <Post 
+                  key={i}
+                  data={p}
+                />
+              )
+            })
+          }
+        </div>
       </div>
     </div>
   )
