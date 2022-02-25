@@ -45,8 +45,16 @@ function HomeContainer() {
         {
           userInfo.info && userInfo.info.role === "admin" && (
             <form className="bg-white w-full mb-4 rounded-md">
+              <input 
+                type="text" 
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className="w-full rounded-t-md p-2"
+                placeholder="Add title"
+              />
+
               <textarea 
-                placeholder="Create a post"
+                placeholder="Enter text"
                 name="post" 
                 id="post" 
                 value={text}
@@ -96,7 +104,7 @@ function HomeContainer() {
                 }
                   
                 <button
-                  onClick={(e) => createPost(e, text, title, file, userInfo.token, dispatch, loading, setLoading, setError, setFile, setText, setMedia)}
+                  onClick={(e) => createPost(e, text, title, file, userInfo.token, dispatch, loading, setLoading, setError, setFile, setText, setTitle, setMedia)}
                   type="submit"
                   className="bg-aboutThat_red text-white h-10 w-20 md:w-36 cursor-pointer duration-200 rounded-br-md"
                 >post</button>

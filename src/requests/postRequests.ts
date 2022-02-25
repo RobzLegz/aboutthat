@@ -16,6 +16,7 @@ const createPost = async (
     setError: React.Dispatch<React.SetStateAction<string>>,
     setFile: React.Dispatch<React.SetStateAction<any>>, 
     setText: React.Dispatch<React.SetStateAction<string>>, 
+    setTitle: React.Dispatch<React.SetStateAction<string>>, 
     setMedia: React.Dispatch<React.SetStateAction<string>>
 ) => {
     e.preventDefault();
@@ -66,6 +67,7 @@ const createPost = async (
             setFile(null);
             setText("");
             setMedia("");
+            setTitle("");
         }).catch((err: any) => {
             const message: string = err.response.data.err;
             setError(message);
