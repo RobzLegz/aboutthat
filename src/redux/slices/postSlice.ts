@@ -23,29 +23,12 @@ export const postSlice = createSlice({
                 state.posts = [action.payload];
             }
         },
-        likePostRdx: (state, action) => {
-            if(state.posts){
-                const {userId, postId} = action.payload;
-
-                const post = state.posts.find(p => p._id === postId);
-
-                if(post){
-                    if(post.likes.includes(userId)){
-                        post.likes = post.likes.filter((id: string) => id !== userId);
-                        post.likes.filter((id: string) => id !== userId);
-                    }else{
-                        post.likes = [...post.likes, userId];
-                    }
-                }
-            }
-        },
     },
 });
 
 export const {
     setPosts,
     publishPost,
-    likePostRdx
 } = postSlice.actions;
 
 export const selectPosts = (state: any) => state.posts;
