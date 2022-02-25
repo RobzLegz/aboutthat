@@ -34,7 +34,7 @@ export default function Home() {
     <div className="page">
       <Head>
         <title>About that</title>
-        <meta name="description" content="Skolēnu veidots informācijas avots par Rīgas Tehniskajā koledžā notiekošo" />
+        <meta name="description" content="A blog website inspired by 'one of us is lying' show" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
