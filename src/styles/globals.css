@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    h1{
+        @apply text-4xl text-dark font-title font-bold;
+    }
+
+    h2{
+        @apply text-3xl text-dark font-bold;
+    }
+
+    h3{
+        @apply text-2xl text-dark font-bold;
+    }
+
+    h4{
+        @apply text-xl text-dark font-semibold;
+    }
+
+    p{
+        @apply text-dark;
+    }
+
+    body{
+        @apply bg-lightGray;
+    }
+
+    input,
+    textarea{
+        @apply border-[1px] rounded-md border-dark px-2 text-dark outline-rtkBlue;
+    }
+
+    .page{
+        @apply flex items-center justify-center h-screen w-full;
+    }
+
+    .file_label{
+        @apply border-[1px] rounded-sm border-dark p-2 text-dark outline-rtkBlue;
+    }
+}
