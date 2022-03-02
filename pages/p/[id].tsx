@@ -19,7 +19,6 @@ function PP() {
 
     const [activePost, setActivePost] = useState<PostInterface | null>(null);
     
-
     useEffect(() => {
         if(!postInfo.posts){
             getPosts(dispatch);
@@ -68,10 +67,10 @@ function PP() {
 
                 <div className="w-full max-w-[600px] bg-dark-lighter p-4 rounded-md">
                     <div className="mb-4">
-                        <h3 className="text-aboutThat_red">{activePost.title}</h3>
+                        <h3 className="text-aboutThat_red">{`<h1>${activePost.title}</h1>`}</h3>
                     </div>
 
-                    <p className="text-white">{activePost.text}</p>
+                    <p className="text-white">{`<p>${activePost.text}</p>`}</p>
 
                     {
                         activePost.media && (
@@ -83,7 +82,6 @@ function PP() {
                         )
                     }
                     
-
                     <div className="flex w-full items-center justify-end mt-2">
                         <small className="text-white">{`<i>${activePost.updatedAt}</i>`}</small>
                     </div>
