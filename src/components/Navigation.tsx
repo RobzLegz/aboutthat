@@ -22,7 +22,7 @@ function Navigation() {
   }, [userInfo.loggedIn, userInfo.token]);
 
   return (
-    <div className="bg-aboutThat_red w-full fixed top-0 left-0 flex items-center justify-between px-4 sm:px-10 py-2">
+    <div className="bg-aboutThat_red w-full absolute top-0 left-0 flex items-center justify-between px-4 sm:px-10 py-2">
       <Link href="/">
         <img 
           src="/svg/logo.svg" 
