@@ -8,7 +8,7 @@ export default function Home() {
             <Head>
                 <title>About that | Login</title>
                 <meta name="description" content="A blog website inspired by 'one of us is lying' show" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/aboutthat.svg" />
             </Head>
 
             <Navigation />
