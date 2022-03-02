@@ -67,7 +67,7 @@ function PP() {
 
                 <div className="w-full max-w-[600px] bg-dark-lighter p-4 rounded-md">
                     <div className="mb-4">
-                        <h3 className="text-aboutThat_red">{activePost.title}</h3>
+                        <h3 className="text-aboutThat_red">{`<h1>${activePost.title}</h1>`}</h3>
                     </div>
 
                     <p className="text-white">{`<p>${activePost.text}</p>`}</p>
