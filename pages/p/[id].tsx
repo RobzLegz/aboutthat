@@ -55,7 +55,7 @@ function PP() {
 
             <Navigation />
 
-            <div className="w-full h-full flex flex-col items-center justify-start pt-20 px-4">
+            <div className="w-full h-full flex flex-col items-center justify-start pt-28 px-4">
                 <div className="w-full p-2 bg-aboutThat_red sm:hidden">
                     <img 
                         src="/svg/back.svg" 

@@ -37,7 +37,7 @@ function HomeContainer() {
   }
 
   return (
-    <div className="w-full h-full flex justify-start items-center flex-col pt-20 px-4">
+    <div className="w-full h-full flex justify-start items-center flex-col pt-28 px-4">
       <div className="w-full max-w-[600px]">
         {
           userInfo.info && userInfo.info.role === "admin" && (
